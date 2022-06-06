@@ -10,7 +10,7 @@
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- FONTAWESOME -->
-    <script src="https:/kit.fontawesome.com/2b498beeb7.js"></script>
+    <script src="https://kit.fontawesome.com/2f64e15a56.js" crossorigin="anonymous"></script>
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- ADDITIONAL HEAD SCRIPTS -->
@@ -36,14 +36,14 @@
       <div class="container nav-contain">
         <div class="row align-items-center pl-0 pr-0 pl-lg-3 pr-lg-3 justify-content-between nav-row">
           <div class="col-lg-5 contact text-start pl-0 pr-0 d-none d-lg-block">
-            <i class="fas fa-phone"></i>
+            <i class="fa-solid fa-phone"></i>
             <a href="#"><span> +421 903 263 457</span></a>
             <span class="bar">|</span>
-            <i class="fas fa-envelope"></i>
+            <i class="fa-solid fa-envelope"></i>
             <a href="#"><span> vysny.m@stonline.sk</span></a>
           </div>
           <div class="col-sm-3 col-lg-2 social text-start text-lg-center pl-0 pr-0 d-none d-sm-block">
-            <a href="https:/www.facebook.com/ApartmanyAStudiaMiroslav/"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https:/www.facebook.com/ApartmanyAStudiaMiroslav/"><i class="fa-brands fa-facebook fa-2x"></i></a>
             <a href="https:/www.tripadvisor.com/Hotel_Review-g1009332-d6969584-Reviews-Apartmany_a_Studia_Miroslav-Demanovska_Dolina_Zilina_Region.html"><i class="fa fa-tripadvisor fa-2x"></i></a>
           </div>
           <div class="col-12 col-sm-9 col-lg-5 pl-sm-0 pr-sm-0 languages text-right align-content-center">
@@ -54,7 +54,7 @@
                   {% get_available_languages as LANGUAGES %}
                   {% get_language_info_list for LANGUAGES as languages %}
                   {% for language in languages %}
-                    <button type="submit" name="language" value="{{ language.code }}" class="button btn btn-secondary {% if language.code == 'pl' %} pr-0 {% endif %}"><img src="{% static 'apartmany/img/'%}{{ language.code }}.png"/> {{ language.code }}</button>
+                    <button type="submit" name="language" value="{{ language.code }}" class="button btn btn-secondary {% if language.code == 'pl' %} pr-0 {% endif %}"><img src="{% static 'generic/img/'%}{{ language.code }}.png"/> {{ language.code }}</button>
                   {% endfor %}
               </form>
             </div>
@@ -66,7 +66,7 @@
     <!-- NAVBAR 2 -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'apartmany/img/logo1.png'%}" alt="Apartmany & Studia Miroslav"/></a>
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'generic/img/logo1.png'%}" alt="Apartmany & Studia Miroslav"/></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -163,11 +163,11 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 mt-0 mt-sm-2">
             <ul class="list-unstyled list-inline social text-center">
-              <li class="list-inline-item"><a href="https:/www.facebook.com/ApartmanyAStudiaMiroslav/"><i class="fab fa-facebook"></i></a></li>
+              <li class="list-inline-item"><a href="https:/www.facebook.com/ApartmanyAStudiaMiroslav/"><i class="fa-brands fa-facebook"></i></a></li>
               <li class="list-inline-item"><a href="https:/www.tripadvisor.com/Hotel_Review-g1009332-d6969584-Reviews-Apartmany_a_Studia_Miroslav-Demanovska_Dolina_Zilina_Region.html"><i class="fa fa-tripadvisor"></i></a></li>
-              <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-instagram"></i></a></li>
-              <li class="list-inline-item"><a href="javascript:void();" ><i class="fas fa-phone"></i></a></li>
-              <li class="list-inline-item"><a href="javascript:void();" ><i class="fa fa-envelope"></i></a></li>
+              <li class="list-inline-item"><a href="javascript:void();"><i class="fa-brands fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="javascript:void();" ><i class="fa-solid fa-phone"></i></a></li>
+              <li class="list-inline-item"><a href="javascript:void();" ><i class="fa-solid fa-envelope"></i></a></li>
             </ul>
           </div>
           </hr>
