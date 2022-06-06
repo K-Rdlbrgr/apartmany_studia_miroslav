@@ -1,0 +1,468 @@
+/* VIDEO HEADER */
+.v-header {
+  top: 17vh;
+  height: 83vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.v-container {
+  margin: 0;
+}
+
+.fullscreen-video-wrap {
+  position: absolute;
+  top: 17vh;
+  left: 0;
+  width: 100%;
+  height: 83vh;
+  overflow: hidden;
+}
+
+.fullscreen-video-wrap {
+  min-width: 100%;
+  max-height: 100%;
+  /* background-image: url(../apartmany/img/gallery/summer/s_2.jpg); */
+  background-size: cover;
+}
+
+.header-overlay {
+  height: 83vh;
+  position: absolute;
+  top: 17vh;
+  left: 0;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.header-content {
+  z-index: 2;
+}
+
+.header-content span {
+  font-weight: 700;
+  color: #589542;
+}
+
+.header-content h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.header-content img {
+  width: 200px;
+}
+
+.header-content #tripadvisor {
+  margin-bottom: 15px;
+}
+
+.btn-header {
+  padding: 1rem 2rem;
+  color: #fff;
+  background: var(--primary-text-color);
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.btn-header:hover {
+  background: rgb(231, 123, 0);
+  color: #fff;
+}
+
+.cards {
+  align-self: end;
+  perspective: 500;
+  -webkit-perspective: 500;
+  -moz-perspective: 500;
+  -ms-perspective: 500;
+  -o-perspective: 500;
+  width: 75px;
+  height: 75px;
+  background-color: rgba(6, 36, 10, 0.5);
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  cursor: pointer;
+  /* Animate the transitions */
+  -webkit-transition: 0.8s;
+  text-align: center;
+  -moz-transition: 0.8s;
+  text-align: center;
+  -ms-transition: 0.8s;
+  text-align: center;
+  -o-transition: 0.8s;
+  text-align: center;
+  transition: 0.8s;
+  text-align: center;
+}
+
+.cards:hover {
+  /* background-color: rgba(6, 36, 10, 0.3); */
+  border: 1px solid rgba(240, 156, 47, 1);
+}
+
+.cards span {
+  color: var(--primary-text-color);
+}
+
+.flip {
+  transform: rotateY(360deg) scale(2, 2);
+  -webkit-transform: rotateY(360deg) scale(2, 2);
+  -moz-transform: rotateY(360deg);
+  -o-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  background-color: rgba(6, 36, 10, 0.2);
+  border: 1px solid rgba(240, 156, 47, 1);
+}
+
+.cards p {
+  font-size: 8px;
+  line-height: 1.3;
+  margin: 4px;
+}
+
+/* SECTIONS */
+.section-1 p,
+.section-1 h2,
+.section-1 h3 {
+  text-align: center;
+  margin: 0 6px;
+}
+
+.bar {
+  width: 100%;
+  height: 1px;
+  background: var(--primary-color-dark);
+}
+
+.header-line h2 {
+  padding: 0 0.8rem;
+  margin: 0;
+  font-size: 30px;
+}
+
+.section-1 h3 {
+  text-transform: uppercase;
+}
+
+.section-1-text p {
+  text-align: center;
+}
+
+.section-1-btn {
+  background: var(--primary-text-color);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+}
+
+.section-1-btn:hover {
+  background: rgb(231, 123, 0);
+  color: #fff;
+}
+
+/* BACKGROUND PICTURES */
+.pimg1,
+.pimg2,
+.pimg3,
+.pimg4 {
+  position: relative;
+  background-color: rgba(6, 36, 10, 0.5);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* Scroll effect disabled with scroll instead of fixed */
+  background-attachment: fixed;
+}
+
+.pimg1 {
+  /* background-image: url(../apartmany/img/bg1.jpg); */
+  min-height: 500px;
+}
+
+.pimg2 {
+  /* background-image: url(../apartmany/img/bg2.jpg); */
+  min-height: 500px;
+}
+
+.pimg3 {
+  /* background-image: url(../apartmany/img/bg3.jpg); */
+  min-height: 500px;
+}
+
+.pimg-overlay {
+  background-color: rgba(0, 0, 0, 0.35);
+  width: 100vw;
+  height: 500px;
+}
+
+/* SECTION WHY US */
+
+.why-cards {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* min-height: 450px; */
+  background-size: auto 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.why-cards-discount {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* min-height: 75px; */
+  background-size: 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.why-cards-discount h2 {
+  font-size: 50px;
+}
+
+.cards-pic {
+  /* background-image: url(../apartmany/img/why5.jpg); */
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-img-overlay {
+  background-color: rgba(6, 36, 10, 0.7);
+}
+
+.card-img-overlay-color {
+  background-color: rgba(36, 24, 6, 0.7);
+}
+
+.card-img-overlay h6 {
+  border-bottom: 1px solid var(--primary-text-color);
+}
+
+.discount-img {
+  max-height: 250px;
+}
+
+#ski-discount {
+  min-height: 100%;
+  /* background-image: url(../apartmany/img/why10.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+}
+
+.discount-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* SECTION SURROUNDINGS */
+.card-surroundings {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* .card-surroundings h3 {
+  border-bottom: 1px solid var(--primary-text-color);
+} */
+
+.card-surroundings-overlay {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: rgb(9, 34, 10);
+  opacity: 0.9;
+  z-index: 1;
+  line-height: 1.8;
+}
+
+.card-surroundings-overlay:hover {
+  opacity: 0.75;
+}
+
+.card-title-two-liner {
+  height: 100px;
+  border-bottom: 1px solid var(--primary-text-color);
+}
+
+/* .card-surroundings3 .card-no-surroundings-overlay {
+  color: #fff;
+  z-index: 2;
+} */
+
+/* GOOGLE MAPS */
+
+.container-googlemap {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 25%; /* aspect ratio */
+  position: relative;
+}
+
+.googlemap {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* MEDIA QUERIES */
+/* @media (min-width: 1080px) {
+  .why-cards {
+    min-height: 450px;
+  }
+  .why-cards-discounts {
+    min-height: 400px;
+  }
+} */
+
+/* @media (min-width: 890px) {
+  .why-cards {
+    min-height: 500px;
+  }
+  .why-cards-discounts {
+    min-height: 650px;
+  }
+} */
+
+/* @media (min-width: 992px) {
+  .card-surroundings-overlay {
+    min-height: 620px;
+  }
+} */
+
+@media (max-width: 767px) {
+  .container-googlemap {
+    padding-bottom: 50%;
+  }
+
+  .header-content .header-image,
+  .header-content .header-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 695px) {
+  .header-content img {
+    width: 150px;
+  }
+
+  .header-content h1 {
+    font-size: 30px;
+    padding: 0 2rem;
+    margin-bottom: 15px;
+  }
+}
+
+/* DISCOUNT */
+.header-wave::after {
+  content: '';
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: white;
+  height: 20%;
+}
+
+.alizarin {
+  background: var(--primary-color-dark);
+}
+
+.descr .btn-header {
+  padding: 0.5rem 1rem;
+}
+
+.dl {
+  background: white;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  z-index: 2;
+}
+
+.dl .brand {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  text-align: center;
+  min-height: 100px;
+  color: var(--primary-text-dark);
+  font-size: 30px;
+}
+
+.dl .discount {
+  min-height: 50px;
+  position: relative;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.dl .discount:after {
+  content: " ";
+
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  position: absolute;
+  bottom: -20px;
+  left: 20%;
+}
+
+.dl .discount.alizarin:after {
+  border-top: 20px solid var(--primary-color-dark);
+}
+
+.dl .discount .type {
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.dl .descr {
+  color: #999;
+  margin-top: 10px;
+  padding: 20px 15px 10px 15px;
+  font-size: 1rem;
+}
+
+.dl .ends {
+  padding: 0 15px;
+  color: var(--primary-text-color);
+  margin-bottom: 10px;
+}
+
+.dl .coupon {
+  min-height: 50px;
+  text-align: center;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 20px 15px;
+}
+
+.dl .coupon a.open-code {
+  color: #16a085;
+}
+
+.dl .coupon .code {
+  letter-spacing: 1px;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 10px 15px;
+  color: var(--primary-text-color);
+  background: var(--primary-color-light);
+}

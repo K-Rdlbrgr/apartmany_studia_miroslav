@@ -1,0 +1,197 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- FONTAWESOME -->
+    <script src="https:/kit.fontawesome.com/2b498beeb7.js"></script>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- ADDITIONAL HEAD SCRIPTS -->
+    {% block headscripts %}{% endblock %}
+    <!-- OWN CSS -->
+    <link rel="stylesheet" href="{% static 'generic/style.css'%}" />
+    {% block style %}{% endblock %}
+    <title></title>
+    <!-- SPECIAL SCRIPTS -->
+    {% block specialscripts %}{% endblock %}
+  </head>
+  <body>
+    {% trans 'Home' as home %}
+    {% trans 'Studios' as studios %}
+    {% trans 'Apartments' as apartments %}
+    {% trans 'Prices/FAQ' as prices_and_faqs %}
+    {% trans 'Gallery' as gallery %}
+    {% trans 'Guestbook' as guestbook %}
+    {% trans 'Surroundings' as surroundings %}
+    {% trans 'Contact' as contact %}
+    <!-- NAVBAR 1 -->
+    <div class="nav-language">
+      <div class="container nav-contain">
+        <div class="row align-items-center pl-0 pr-0 pl-lg-3 pr-lg-3 justify-content-between nav-row">
+          <div class="col-lg-5 contact text-start pl-0 pr-0 d-none d-lg-block">
+            <i class="fas fa-phone"></i>
+            <a href="#"><span> +421 903 263 457</span></a>
+            <span class="bar">|</span>
+            <i class="fas fa-envelope"></i>
+            <a href="#"><span> vysny.m@stonline.sk</span></a>
+          </div>
+          <div class="col-sm-3 col-lg-2 social text-start text-lg-center pl-0 pr-0 d-none d-sm-block">
+            <a href="https:/www.facebook.com/ApartmanyAStudiaMiroslav/"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https:/www.tripadvisor.com/Hotel_Review-g1009332-d6969584-Reviews-Apartmany_a_Studia_Miroslav-Demanovska_Dolina_Zilina_Region.html"><i class="fa fa-tripadvisor fa-2x"></i></a>
+          </div>
+          <div class="col-12 col-sm-9 col-lg-5 pl-sm-0 pr-sm-0 languages text-right align-content-center">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+              <form action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="text" value="{{ redirect_to }}">
+                  {% get_available_languages as LANGUAGES %}
+                  {% get_language_info_list for LANGUAGES as languages %}
+                  {% for language in languages %}
+                    <button type="submit" name="language" value="{{ language.code }}" class="button btn btn-secondary {% if language.code == 'pl' %} pr-0 {% endif %}"><img src="{% static 'apartmany/img/'%}{{ language.code }}.png"/> {{ language.code }}</button>
+                  {% endfor %}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR 2 -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'apartmany/img/logo1.png'%}" alt="Apartmany & Studia Miroslav"/></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+              <a class="nav-link" href="{% url 'home' %}">{{ home }}<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'studios' %}active{% endif %}">
+              <a class="nav-link secondary-nav" href="{% url 'studios' %}">{{ studios }}</a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'apartments' %}active{% endif %}">
+              <a class="nav-link secondary-nav" href="{% url 'apartments' %}">{{ apartments }}</a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'prices_and_faqs' %}active{% endif %}">
+              <a class="nav-link secondary-nav" href="{% url 'prices_and_faqs' %}">{{ prices_and_faqs }}</a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">
+              <a class="nav-link secondary-nav" href="{% url 'gallery' %}">{{ gallery }}</a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'guestbook' %}active{% endif %}">
+              <a class="nav-link secondary-nav" href="{% url 'guestbook' %}">{{ guestbook }}</a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'surroundings' %}active{% endif %}">
+              <a class="nav-link secondary-nav" href="{% url 'surroundings' %}">{{ surroundings }}</a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+              <a class="nav-link secondary-nav pr-lg-0" href="{% url 'contact' %}">{{ contact }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <!-- MAIN FOOTER -->
+    <section id="footer">
+      <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left pb-2">
+          <div class="col-md-6 pt-3 pb-1 d-none d-md-block">
+            <div class="row text-center justify-content-start text-xs-center text-sm-left text-md-left footer-change">
+              <div class="col-xs-12 footer-change">
+                <h5>{% trans 'Quick Links' %}</h5>
+              </div>
+            </div>
+            <div class="row text-center text-xs-center text-sm-left text-md-left">
+              <div class="col-sm-12 col-md-6">
+                <ul class="list-unstyled quick-links">
+                  <li><a href="{% url 'home' %}"><i class="fa fa-angle-double-right"></i>{{ home }}</a></li>
+                  <li><a href="{% url 'apartments' %}"><i class="fa fa-angle-double-right"></i>{{ apartments }}</a></li>
+                  <li><a href="{% url 'studios' %}"><i class="fa fa-angle-double-right"></i>{{ studios }}</a></li>
+                  <li><a href="{% url 'prices_and_faqs' %}"><i class="fa fa-angle-double-right"></i>{{ prices_and_faqs }}</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <ul class="list-unstyled quick-links">
+                  <li><a href="{% url 'gallery' %}"><i class="fa fa-angle-double-right"></i>{{ gallery }}</a></li>
+                  <li><a href="{% url 'guestbook' %}"><i class="fa fa-angle-double-right"></i>{{ guestbook }}</a></li>
+                  <li><a href="{% url 'surroundings' %}"><i class="fa fa-angle-double-right"></i>{{ surroundings }}</a></li>
+                  <li><a href="{% url 'contact' %}"><i class="fa fa-angle-double-right"></i>{{ contact }}</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 pt-3 pb-1">
+            <div class="row justify-content-md-end justify-content-center text-center text-md-left footer-change">
+              <div class="col-xs-12 footer-change">
+                <h5>{{ contact }}</h5>
+              </div>
+            </div>
+            <div class="row text-center text-md-right">
+              <div class="col-sm-12 col-md-12">
+                <p>
+                {% blocktrans %}
+                Miroslav Vysny <br>
+                Demänovská Dolina 11 <br>
+                031 01 Liptovský Mikuláš <br>
+                SLOVENSKO
+                {% endblocktrans %}
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 mt-0 mt-sm-2">
+            <ul class="list-unstyled list-inline social text-center">
+              <li class="list-inline-item"><a href="https:/www.facebook.com/ApartmanyAStudiaMiroslav/"><i class="fab fa-facebook"></i></a></li>
+              <li class="list-inline-item"><a href="https:/www.tripadvisor.com/Hotel_Review-g1009332-d6969584-Reviews-Apartmany_a_Studia_Miroslav-Demanovska_Dolina_Zilina_Region.html"><i class="fa fa-tripadvisor"></i></a></li>
+              <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="javascript:void();" ><i class="fas fa-phone"></i></a></li>
+              <li class="list-inline-item"><a href="javascript:void();" ><i class="fa fa-envelope"></i></a></li>
+            </ul>
+          </div>
+          </hr>
+        </div>	
+      </div>
+    </section>
+
+    <!-- END FOOTER -->
+    <footer class="end">
+      <div class="row text-center pt-2 pb-2">
+        <div class="col-12">
+          <p class="mb-0">Copyright &copy; 2019 by Miroslav Vysny</p>
+        </div>
+      </div>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+    <!-- BOOTSTRAP SCRIPTS -->
+    <!-- jQuery library -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="/js/main.js"></script> -->
+  </body>
+</html>

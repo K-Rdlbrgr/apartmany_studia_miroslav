@@ -1,1 +1,18 @@
-Hello World!
+{% extends "base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% block style %}
+  <!-- OWN CSS -->
+  <link rel="stylesheet" href="{% static 'generic/index_style.css'%}" />
+{% endblock %}
+
+{% block title %}Miroslav Apartmany & Studia{% endblock %}
+
+{% block content %}
+{% trans 'Save' as save %}
+{% trans 'Previous' as previous %}
+{% trans 'Next' as next %}
+
+{% endblock %}
