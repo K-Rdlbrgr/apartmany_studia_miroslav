@@ -23,7 +23,7 @@
 .fullscreen-video-wrap {
   min-width: 100%;
   max-height: 100%;
-  /* background-image: url(../apartmany/img/gallery/summer/s_2.jpg); */
+  
   background-size: cover;
 }
 
@@ -181,17 +181,17 @@
 }
 
 .pimg1 {
-  /* background-image: url(../apartmany/img/bg1.jpg); */
+  
   min-height: 500px;
 }
 
 .pimg2 {
-  /* background-image: url(../apartmany/img/bg2.jpg); */
+  
   min-height: 500px;
 }
 
 .pimg3 {
-  /* background-image: url(../apartmany/img/bg3.jpg); */
+  
   min-height: 500px;
 }
 
@@ -224,7 +224,7 @@
 }
 
 .cards-pic {
-  /* background-image: url(../apartmany/img/why5.jpg); */
+  
   position: relative;
   background-size: cover;
   background-position: center;
@@ -249,7 +249,7 @@
 
 #ski-discount {
   min-height: 100%;
-  /* background-image: url(../apartmany/img/why10.jpg); */
+  
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: right;
