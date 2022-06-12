@@ -4,7 +4,7 @@
 .no-overlay-picture {
   width: 40%;
   height: 40%;
-  background-image: url(../apartmany/img/miro.jpg);
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655049754/contact/miro_uxbiiz.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 50%;
