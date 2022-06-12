@@ -1,0 +1,78 @@
+/* CARDS */
+@import url("https://afeld.github.io/emoji-css/emoji.css");
+
+.no-overlay-picture {
+  width: 40%;
+  height: 40%;
+  background-image: url(../apartmany/img/miro.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 0px 30px 1px rgba(0, 0, 0, 0.8);
+}
+
+.card-image {
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655049358/contact/contact_form_yluov6.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-image .card-title {
+  border-bottom: 2px solid var(--primary-text-color);
+}
+
+.contact-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.btn-contact {
+  padding: 1rem 2rem;
+  color: #fff;
+  background: var(--primary-text-color);
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.btn-contact:hover {
+  background: rgb(231, 123, 0);
+  color: #fff;
+}
+
+/* HEADER PICTURE */
+.pimg {
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655049357/contact/contact-header_rdhhiu.jpg');
+  background-size: cover;
+  background-position-y: 80%;
+  height: 400px;
+}
+
+.pimg-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 400px;
+}
+
+.pimg h1 {
+  color: var(--primary-color-light);
+}
+
+/* CONTACT FORMS */
+.form-selection button {
+  border: none;
+  background-color: var(--primary-color-dark);
+  transition: 0.3s ease-in-out;
+  color: var(--primary-color-light);
+  border-radius: 0.25rem;
+}
+
+.form-selection button:hover {
+  border: none;
+  background-color: var(--primary-text-color);
+  transition: 0.3s ease-in-out;
+  color: var(--primary-color-light);
+  border-radius: 0.25rem;
+}

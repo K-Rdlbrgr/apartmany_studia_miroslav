@@ -2,3 +2,265 @@
 
 {% load static %}
 {% load i18n %}
+
+{% block headscripts %}
+  <!-- DATEPICKER -->
+  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block style %}
+  <!-- OWN CSS -->
+  <link rel="stylesheet" href="{% static 'generic/contact_style.css'%}" />
+{% endblock %}
+
+{% block title %}Miroslav Apartmany & Studia - Contact{% endblock %}
+
+{% block specialscripts %}
+  <!-- CONTACT/RESERVATION FUNCTION -->
+  <script>
+    function contactFunction() {
+      var x = document.getElementById("contactForm");
+      var y = document.getElementById("reservationForm");
+      x.style.display = "block";
+      y.style.display = "none";
+      }
+  </script>
+  <script>
+  function reservationFunction() {
+    var x = document.getElementById("reservationForm");
+    var y = document.getElementById("contactForm");
+    x.style.display = "block";
+    y.style.display = "none";
+    }  
+  </script>
+  <script>
+    $(document).ready(function() {
+      $("#inputType").change(function() {
+          var val = $(this).val();
+          if (val == "Apartment") {
+              $("#inputNumber").html("<option value='Not Specified'>Not Specified</option><option value='7'>7</option><option value='11'>11</option><option value='12'>12</option><option value='13'>13</option><option value='14'>14</option>");
+              $("#inputGuests").html("<option value='Not Specified'>Not Specified</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option>");
+          } else if (val == "Studio") {
+              $("#inputNumber").html("<option value='Not Specified'>Not Specified</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='8'>8</option><option value='9'>9</option><option value='10'>10</option>");
+              $("#inputGuests").html("<option value='Not Specified'>Not Specified</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option>");
+          } else if (val == "Unknown") {
+              $("#inputNumber").html("<option value=''>Not Specified</option>");
+              $("#inputGuests").html("<option value='Not Specified'>Not Specified</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option>");
+          }
+      });
+    });
+  </script>
+{% endblock %}
+
+{% block content %}
+
+  <!-- CARD WRAPER -->
+
+  <div class="pimg">
+    <div class="pimg-overlay">
+      <div class="row h-100 align-content-center">
+        <div class="col-12">
+          <div class="header-text text-center justify-content-center">
+            <h1>{% blocktrans %}CONTACT<br>&<br>RESERVATION{% endblocktrans %}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="inner-container pt-5 pb-5">
+      <div class="contact-text text-justify mb-5">
+        <p>{% blocktrans %}Please feel free to send us any question or a reservation requests, using the forms provided below. In case you would like to reserve an apartment or studio, please provide us with your desired arrival and return dates, your preferred apartment or studio and the number of people. Be aware that in during the high season, bookings can only be arranged for a whole week, starting each Saturday. Your reservation request does not represent a binding offer and we will get in contact with you through your provided email as soon as possible to arrange the booking.{% endblocktrans %}</p>
+      </div>
+
+      <!-- CARDS -->
+
+          <div class="row">
+
+            <!-- FORM ON THE LEFT -->
+  
+              <div class="col-12 col-lg-8">
+
+                <div class="row justify-content-between form-selection mb-4">
+                  <div class="col-12">
+                    <div class="row" style="margin: 0 -5px 0 -5px;">
+                      <div class="col-6 text-center" style="padding: 0 5px 0 5px;">
+                        <button class="p-2 w-100" onclick="contactFunction()">{% trans 'Contact & Questions' %}</button>
+                      </div>
+                      <div class="col-6 text-center" style="padding: 0 5px 0 5px;">
+                        <button class="p-2 w-100" onclick="reservationFunction()">{% trans 'Reservation Request' %}</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- START CONTACT & QUESTIONS -->
+                {% trans 'Name' as name %}
+                {% trans 'Email' as email %}
+                {% trans 'Message' as mes %}
+                {% trans 'Subject' as subject %}
+                {% trans 'Please Select' as select %}
+
+                <div class="row">
+                  <div class="col-12">
+                    <form method="POST" id="contactForm" style="display: block;">
+                      {% csrf_token %}
+                      <div class="form-row">
+                        <div class="form-group col-12 col-md-6">
+                          <label for="inputName">{{ name }}</label>
+                          <input type="text" class="form-control" id="inputName" placeholder="Name" name="Name" required>
+                        </div>
+                        <div class="form-group col-12 col-md-6">
+                          <label for="inputEmail">{{ email }}</label>
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="Email" required>
+                        </div>
+                        <div class="form-group col-12">
+                          <label for="inputSubject">{% trans 'Subject' %}</label>
+                          <input type="text" class="form-control" id="inputSubject" placeholder="{{ subject }}" name="Subject" required>
+                        </div>
+                        <div class="form-group col-12">
+                          <label for="inputMessage">{{ mes }}</label>
+                          <textarea class="form-control" id="inputMessage" rows="10" name="Message" required></textarea>
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-contact" name="Submit-Contact">{% trans 'Send Message' %}</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- END CONTACT & QUESTIONS -->
+
+                <!-- START RESERVATION REQUEST -->
+
+                <div class="row">
+                  <div class="col-12">
+                    <form method="POST" id="reservationForm" style="display: none;">
+                      {% csrf_token %}
+                      <div class="form-row">
+                        <div class="form-group col-12 col-md-6">
+                          <label for="inputName">{{ name }}</label>
+                          <input type="text" class="form-control" id="inputName" placeholder="Name" name="Name" required>
+                        </div>
+                        <div class="form-group col-12 col-md-6">
+                          <label for="inputEmail">{{ email }}</label>
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="Email" required>
+                        </div>
+                        <div class="form-group col-12 col-md-6">
+                          <label for="inputType">{% trans 'Accomodation Type' %}</label>
+                          <select class="form-control" id="inputType" name="Type" required>
+                            <option value="Unknown">{{ select }}</option>
+                            <option value="Apartment">{% trans 'Apartment' %}</option>
+                            <option value="Studio">{% trans 'Studio' %}</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-12 col-md-6">
+                          <label for="inputNumber">{% trans 'Accomodation Detail' %}</label>
+                          <select class="form-control" id="inputNumber" name="Number" required>
+                            <option value="Unknown">{{ select }}</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-12 col-lg-6">
+                          <div class="row">
+                            <div class="col-6">
+                              <label for="inputStartDate">{% trans 'Arrival' %}</label>
+                              <input type='text' class="form-control" id='inputStartDate' placeholder="DD/MM/YY" name="Start_Date" required>    
+                            </div>
+                            <div class="col-6">
+                              <label for="inputEndDate">{% trans 'Departure' %}</label>
+                              <input type='text' class="form-control" id='inputEndDate' placeholder="DD/MM/YY" name="End_Date" required>  
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group col-12 col-lg-6">
+                          <label for="inputGuests">{% trans 'Number of Guests' %}</label>
+                          <select class="form-control" id="inputGuests" name="Guests" required>
+                            <option value="Unknown">{{ select }}</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-12">
+                          <label for="inputMessage">{{ mes }}</label>
+                          <textarea class="form-control" id="inputMessage" rows="10" name="Message" required></textarea>
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-contact" name="Submit-Reservation">{% trans 'Send Reservation Request' %}</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- END RESERVATION REQUEST -->
+                
+              </div>
+  
+            <!-- END FORM -->
+  
+            <!-- CONTACT CARD ON THE RIGHT -->
+  
+              <div class="col-12 col-lg-4 mt-5 mt-lg-0">
+                <div class="card card-image p-0 h-100">
+                  <div class="contact-overlay"></div>
+  
+                  <!-- Content -->
+                  <div class="text-white text-center d-flex align-items-center justify-content-center rgba-black-strong px-3 h-100" style="z-index: 2;">
+                    <div>
+                      <img class="no-overlay-picture mb-2 mt-4 mt-lg-0" src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655049754/contact/miro_uxbiiz.jpg" alt="Miroslav Vysny"><br>
+                      <h3 class="card-title pt-2 pb-2"><strong>Miroslav Vysny</strong></h3>
+                      <p>
+                        {% blocktrans %}
+                        Demanovskaà Dolina 11 <br>
+                        031 01 Liptovsky Mikulas <br>
+                        SLOVENSKO
+                        {% endblocktrans %}
+                      </p>
+                      <p class="mb-4 mb-lg-0">
+                        <i class="fas fa-phone mr-1"></i>
+                        +421 903 263 457<br>
+                        <i class="fas fa-envelope mr-1"></i>
+                        apartmanymiroslav@gmail.com<br>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- END CONTACT CARD -->
+  
+            </div>
+        </div>
+
+      <!-- END CARDS -->
+
+    </div>
+  </div>
+
+  <!-- END CARD WRAPPER -->
+
+{% endblock %}
+
+{% block scripts %}
+  <!-- BOOTSTRAP SCRIPTS -->
+  <script>
+    $('#inputStartDate').datepicker({
+        format: 'dd/mm/yy',
+        uiLibrary: 'bootstrap4'
+    });
+    $('#inputEndDate').datepicker({
+        format: 'dd/mm/yy',
+        uiLibrary: 'bootstrap4'
+    });
+  </script>
+{% endblock %}
