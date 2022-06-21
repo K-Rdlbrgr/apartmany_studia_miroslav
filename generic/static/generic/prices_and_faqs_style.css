@@ -1,0 +1,114 @@
+/* HEADER PICTURE */
+.pimg {
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837247/prices_and_faqs/prices_and_faqs_header_j1jsfr.jpg');
+  background-size: cover;
+  background-position-y: 80%;
+  height: 400px;
+}
+
+.pimg-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 400px;
+}
+
+.pimg h1 {
+  color: var(--primary-color-light);
+}
+
+/* DISCOUNTS */
+.discount-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  min-height: 450px;
+  background-size: auto 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.color-circle {
+  border: 2px solid var(--primary-text-color);
+}
+
+.white-circle {
+  border: 2px solid var(--primary-color-light);
+}
+
+.header {
+  border: none;
+  background-color: var(--primary-color-dark);
+  transition: 0.3s ease-in-out;
+  color: var(--primary-color-light);
+  border-radius: 0.25rem;
+}
+
+/* MAIN SECTION */
+.bar {
+  width: 100%;
+  height: 1px;
+  background: var(--primary-color-dark);
+}
+
+.header-line h2 {
+  padding: 0 0.8rem;
+  margin: 0;
+  font-size: 30px;
+}
+
+#prices h5 {
+  text-align: start;
+  color: black;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-decoration: underline;
+  text-decoration-thickness: double;
+  text-decoration-color: var(--primary-text-color);
+}
+
+#prices h6 {
+  font-size: 1.25rem;
+  color: black;
+  width: max-content;
+  font-weight: bold;
+}
+
+#prices h6:hover {
+  color: var(--primary-text-color);
+  width: max-content;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.item-header h6,
+.item-header p {
+  padding-left: 12px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+#prices h2 {
+  color: var(--primary-color-dark);
+}
+
+#bullet-list {
+  margin-left: 45px;
+}
+
+.prices-image {
+  position: absolute;
+  top: 17vh;
+  left: 0;
+  width: 100%;
+  height: 63vh;
+  overflow: hidden;
+}
+
+.header-text h1 {
+  color: var(--primary-color-light);
+  font-weight: 700;
+}
+
+#emptyrow {
+  padding-bottom: 80px;
+}
