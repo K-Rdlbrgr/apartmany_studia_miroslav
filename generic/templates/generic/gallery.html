@@ -2,3 +2,255 @@
 
 {% load static %}
 {% load i18n %}
+
+<{% block headscripts %}
+  <!-- LIGHTBOX -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+{% endblock %}
+{% block style %}
+  <!-- OWN CSS -->
+  <link rel="stylesheet" href="{% static 'generic/gallery_style.css'%}" />
+{% endblock %}
+{% block title %}Miroslav Apartmany & Studia{% endblock %}
+
+{% block content %}
+  <!-- CARD WRAPER -->
+
+  <!-- HEADER -->
+
+  <div class="pimg">
+    <div class="pimg-overlay">
+      <div class="row h-100 align-content-center">
+        <div class="col-12">
+          <div class="header-text text-center justify-content-center">
+            <h1>{% trans 'GALLERY' %}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="inner-container pt-5 pb-5">
+
+  <!-- END HEADER -->
+
+      <!-- GALLERY -->
+
+          <!-- FIRST GALLERY SECTION -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <p class="text-justify mb-4">{% blocktrans %}Apartmany & Studia Miroslav - modern accommodation with sauna located in the heart of Demanovska Valley just a few minutes from Jasna Chopok ski center - offers something for everyone during both summer and winter. We are surrounded by lush green forrest and the river Demanovka flows right through our property. Our place is amazing for families with children that can play in the huge garden, use the trampoline or the wooden playhouse with slides and sandbox. However our place is also perfect for a couple's romantic getaway thanks to many picturesque quier corners and the tranquility of the valley. Our guests also appreciate that we have 5 grills and 2 firepits available for barbeque, 8 bikes for free rent, storage spaces for sports equipment, spacious parking lot and a small workout area.{% endblocktrans %}</p>
+              <ul class="nav nav-pills justify-content-center mb-4 row" id="pills-tab" role="tablist">
+                <li class="nav-item gallery col-12 col-sm-4 col-lg-3 col-xl-2 mb-2">
+                  <a class="nav-link text-center active" id="pills-winter-tab" data-toggle="pill" href="#pills-winter" role="tab" aria-controls="pills-winter" aria-selected="true">{% trans 'Winter' %}</a>
+                </li>
+                <li class="nav-item gallery col-12 col-sm-4 col-lg-3 col-xl-2 mb-2">
+                  <a class="nav-link text-center" id="pills-summer-tab" data-toggle="pill" href="#pills-summer" role="tab" aria-controls="pills-summer" aria-selected="false">{% trans 'Summer' %}</a>
+                </li>
+                <li class="nav-item gallery col-12 col-sm-4 col-lg-3 col-xl-2">
+                  <a class="nav-link text-center" id="pills-facilities-tab" data-toggle="pill" href="#pills-facilities" role="tab" aria-controls="pills-facilities" aria-selected="false">{% trans 'Facilities' %}</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-winter" role="tabpanel" aria-labelledby="pills-winter-tab">
+                  <div class="row justify-content-center">
+                    <div class="col-md-12">
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835086/gallery/winter/w_1_ia1ln9.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835086/gallery/winter/w_1_ia1ln9.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835087/gallery/winter/w_2_lwodl3.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835087/gallery/winter/w_2_lwodl3.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835088/gallery/winter/w_3_w1tqso.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835088/gallery/winter/w_3_w1tqso.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835089/gallery/winter/w_4_or0ydx.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835089/gallery/winter/w_4_or0ydx.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835098/gallery/winter/w_5_wosynt.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835098/gallery/winter/w_5_wosynt.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835088/gallery/winter/w_6_kztgq1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835088/gallery/winter/w_6_kztgq1.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="pills-summer" role="tabpanel" aria-labelledby="pills-summer-tab">
+                  <div class="row justify-content-center">
+                    <div class="col-md-12">
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835050/gallery/summer/s_1_tnod88.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835050/gallery/summer/s_1_tnod88.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835126/gallery/summer/s_2_osl30x.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835126/gallery/summer/s_2_osl30x.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835126/gallery/summer/s_3_uwej9q.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835126/gallery/summer/s_3_uwej9q.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835124/gallery/summer/s_4_vucxzi.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835124/gallery/summer/s_4_vucxzi.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835125/gallery/summer/s_5_xvikkb.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835125/gallery/summer/s_5_xvikkb.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835126/gallery/summer/s_6_csukjx.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835126/gallery/summer/s_6_csukjx.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835123/gallery/summer/s_7_adez6s.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835123/gallery/summer/s_7_adez6s.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835109/gallery/summer/s_8_zhwuce.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835109/gallery/summer/s_8_zhwuce.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835117/gallery/summer/s_9_nfxo3l.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835117/gallery/summer/s_9_nfxo3l.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835116/gallery/summer/s_10_g2nhoh.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835116/gallery/summer/s_10_g2nhoh.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835116/gallery/summer/s_11_wwavfn.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835116/gallery/summer/s_11_wwavfn.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835125/gallery/summer/s_12_w7rzf4.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835125/gallery/summer/s_12_w7rzf4.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835109/gallery/summer/s_13_o3tjgn.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835109/gallery/summer/s_13_o3tjgn.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835110/gallery/summer/s_14_atnokg.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835110/gallery/summer/s_14_atnokg.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835102/gallery/summer/s_15_rjq02g.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835102/gallery/summer/s_15_rjq02g.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835111/gallery/summer/s_16_dzo8fp.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835111/gallery/summer/s_16_dzo8fp.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835075/gallery/summer/s_17_tlxyva.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835075/gallery/summer/s_17_tlxyva.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835085/gallery/summer/s_18_kwqeji.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835085/gallery/summer/s_18_kwqeji.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835085/gallery/summer/s_19_h4jlkq.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835085/gallery/summer/s_19_h4jlkq.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835065/gallery/summer/s_20_hx4k0v.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835065/gallery/summer/s_20_hx4k0v.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835055/gallery/summer/s_21_dajobb.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835055/gallery/summer/s_21_dajobb.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835065/gallery/summer/s_22_e6qyio.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835065/gallery/summer/s_22_e6qyio.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835076/gallery/summer/s_23_eepnny.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835076/gallery/summer/s_23_eepnny.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835068/gallery/summer/s_24_ldukqd.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835068/gallery/summer/s_24_ldukqd.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835091/gallery/summer/s_25_uwl8dp.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835091/gallery/summer/s_25_uwl8dp.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835093/gallery/summer/s_26_dqaggd.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835093/gallery/summer/s_26_dqaggd.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835114/gallery/summer/s_27_pgib0s.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835114/gallery/summer/s_27_pgib0s.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="pills-facilities" role="tabpanel" aria-labelledby="pills-facilities-tab">
+                  <div class="row justify-content-center">
+                    <div class="col-md-12">
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835087/gallery/facilities/f_1_egsuej.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835087/gallery/facilities/f_1_egsuej.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835061/gallery/facilities/f_2_kbjdcn.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835061/gallery/facilities/f_2_kbjdcn.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835049/gallery/facilities/f_3_mcrzgw.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835049/gallery/facilities/f_3_mcrzgw.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835057/gallery/facilities/f_4_bowbq4.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835057/gallery/facilities/f_4_bowbq4.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835079/gallery/facilities/f_5_idjdql.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835079/gallery/facilities/f_5_idjdql.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835086/gallery/facilities/f_6_o5csyy.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835086/gallery/facilities/f_6_o5csyy.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="row pt-sm-3 pt-0 pb-sm-3 pb-0">
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835075/gallery/facilities/f_7_arckve.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                            <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835075/gallery/facilities/f_7_arckve.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835096/gallery/facilities/f_8_aljayt.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835096/gallery/facilities/f_8_aljayt.jpg" class="img-fluid">
+                        </a>
+                        <a href="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835097/gallery/facilities/f_9_xhjjz0.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4 pt-sm-0 pt-3 pb-sm-0 pb-3">
+                          <img src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835097/gallery/facilities/f_9_xhjjz0.jpg" class="img-fluid">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <!-- END FIRST GALLERY SECTION -->
+
+      <!-- END GALLERY -->
+
+    </div>
+  </div>
+
+  <!-- END CARD WRAPPER -->
+
+{% endblock %}
+
+{% block scripts %}
+    <!-- BOOTSTRAP SCRIPTS -->
+
+    <script>
+      $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+    </script>
+
+{% endblock %}

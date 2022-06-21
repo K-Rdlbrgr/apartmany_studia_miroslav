@@ -1,0 +1,32 @@
+/* HEADER PICTURE */
+.pimg {
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835482/gallery/gallery_zfvqne.jpg');
+  background-size: cover;
+  background-position-y: 50%;
+  height: 400px;
+}
+
+.pimg-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 400px;
+}
+
+.pimg h1 {
+  color: var(--primary-color-light);
+}
+
+/* NAV ITEMS */
+.gallery a {
+  color: var(--primary-text-dark);
+  border: 2px solid var(--primary-text-color);
+}
+
+.gallery a:hover {
+  background-color: var(--primary-color-light);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: var(--primary-text-color);
+}
