@@ -23,7 +23,7 @@
 .fullscreen-video-wrap {
   min-width: 100%;
   max-height: 100%;
-  
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655835126/gallery/summer/s_2_osl30x.jpg');
   background-size: cover;
 }
 
@@ -181,17 +181,17 @@
 }
 
 .pimg1 {
-  
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655838641/index/bg1_feknja.jpg');
   min-height: 500px;
 }
 
 .pimg2 {
-  
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655838646/index/bg2_hi4ykt.jpg'); 
   min-height: 500px;
 }
 
 .pimg3 {
-  
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655838652/index/bg3_kucm3p.jpg');
   min-height: 500px;
 }
 
