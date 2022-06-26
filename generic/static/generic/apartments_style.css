@@ -1,13 +1,4 @@
 /* Main Sections */
-.wallpaper {
-  background-image: url(../apartmany/img/wallpaper.jpg);
-  min-height: 700px;
-  opacity: 0.8;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 
 .container-fix {
   position: fixed;

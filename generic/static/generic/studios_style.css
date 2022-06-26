@@ -1,13 +1,4 @@
 /* Main Sections */
-.wallpaper {
-  background-image: url(../apartmany/img/wallpaper.jpg);
-  min-height: 700px;
-  opacity: 0.8;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 
 .container-fix {
   position: fixed;
@@ -149,7 +140,7 @@
 
 /* HEADER PICTURE */
 .pimg {
-  background-image: url(../apartmany/img/studios.jpg);
+  background-image: url("https://res.cloudinary.com/hmzflxvlh/image/upload/v1656264672/studios/studios-header_ujlvv9.jpg");
   background-size: cover;
   background-position-y: 30%;
   height: 400px;
