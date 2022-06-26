@@ -2,3 +2,733 @@
 
 {% load static %}
 {% load i18n %}
+
+{% block style %}
+<!-- OWN CSS -->
+<link rel="stylesheet" href="{% static 'generic/apartments_style.css' %}" />
+{% endblock %}
+
+{% block title %}Miroslav Apartmany & Studia{% endblock %}
+
+{% block content %}
+
+{% trans 'Apartment' as apartment %}
+{% trans 'Apartments' as apartments %}
+{% trans 'Apartment Details' as details %}
+{% trans 'Details' as details_sm %}
+{% trans 'Standard' as standard %}
+{% trans 'Comfort' as comfort %}
+{% trans 'Superior' as superior %}
+{% trans 'Previous' as previous %}
+{% trans 'Next' as next %}
+{% trans 'Maximum Capacity' as capacity %}
+{% trans 'Singlebed' as single %}
+{% trans 'Singlebeds' as singles %}
+{% trans 'Doublebed' as double %}
+{% trans 'Doublebeds' as doubles %}
+{% trans 'Sofabed' as sofa %}
+{% trans 'Sofabeds' as sofas %}
+
+<!-- HEADER -->
+<div class="pimg">
+  <div class="pimg-overlay">
+    <div class="row h-100 align-content-center">
+      <div class="col-12">
+        <div class="header-text text-center justify-content-center">
+          <h1>{{ apartments|upper }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END HEADER -->
+
+<!-- CARD WRAPER -->
+
+<div class="container">
+  <div class="inner-container pt-5 pb-5">
+    <div class="contact-text text-justify mb-5">
+      <p>
+        {% blocktrans %}Apartmany & Studia Miroslav accodommodation with wellness & sauna in Demanovska Dolina, in the close proximity of Jasna Chopok ski center provides a total of nine studios and five apartments. Our apartments are ranging between 35m² and 82m² and have fully equipped kitchen. Besides more detailed information and pictures of each of our apartments, you can also take a virtual 360° tour through them with the button in the top right corner in every apartment description.{% endblocktrans %}
+      </p>
+    </div>
+
+    <!-- CARDS -->
+
+    <!-- APARTMENT 7 -->
+    <div class="card mb-5">
+      <div class="content">
+        <div class="row" id="apartment-name">
+          <div class="col-8">
+            <h1 class="d-none d-md-block">{{ apartment }} 7</h1>
+            <h3 class="d-block d-md-none">{{ apartment }} 7</h3>
+            <h5>{{ standard }}</h5>
+          </div>
+          <div class="col-4 img-fluid justify-content-center text-right" id="degree">
+            <a href="">
+              <img class="filter-gray" src="{% static 'generic/img/degree.png'%}" alt="360" />
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <!--Carousel Wrapper-->
+            <div id="carousel-thumb-7" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837849/apartments/apartment_7/a7_1_lshw4d.jpg"
+                    ,
+                    alt="Apartment 7 Picture"
+                  />
+                </div>
+                {% for n in range_a7 %}
+                <div class="carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837849/apartments/apartment_7/a7_{{n}}_lshw4d.jpg"
+                    ,
+                    alt="Apartment 7 Picture"
+                  />
+                </div>
+                {% endfor %}
+              </div>
+              <!--/.Slides-->
+              <!--Controls-->
+              <a class="carousel-control-prev" href="#carousel-thumb-7" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">{{ previous }}</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel-thumb-7" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">{{ next }}</span>
+              </a>
+              <!--/.Controls-->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-thumb-7" data-slide-to="0" class="active">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837849/apartments/apartment_7/a7_1_lshw4d.jpg"
+                    class="img-fluid"
+                  />
+                </li>
+                {% for n in range_a7 %}
+                <li data-target="#carousel-thumb-7" data-slide-to="{{n|add:'-1'}}">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837849/apartments/apartment_7/a7_{{n}}_lshw4d.jpg"
+                    class="img-fluid"
+                  />
+                </li>
+                {% endfor %}
+              </ol>
+            </div>
+            <!--/.Carousel Wrapper-->
+          </div>
+          <div class="col-12 col-lg-6 mt-4 mt-lg-0 icons">
+            <div class="d-flex justify-content-between">
+              <h5 class="d-none d-sm-block">{{ details }}</h5>
+              <h5 class="d-block d-sm-none">{{ details_sm }}</h5>
+              <div class="">
+                <i class="fas fa-wifi mr-2"></i>
+                <i class="fas fa-tv mr-2"></i>
+                <div class="radio">
+                  <img class="filter-gray" src="{% static 'generic/img/radio.svg'%}" alt="Fridge" />
+                </div>
+                <i class="fas fa-utensils mr-2"></i>
+                <div class="fridge">
+                  <img class="filter-gray" src="{% static 'generic/img/fridge.svg'%}" alt="Fridge" />
+                </div>
+                <div class="towels">
+                  <img class="filter-gray" src="{% static 'generic/img/towels.svg'%}" alt="Fridge" />
+                </div>
+                <div class="hairdryer">
+                  <img class="filter-gray" src="{% static 'generic/img/hairdryer.svg'%}" alt="Fridge" />
+                </div>
+              </div>
+            </div>
+            <hr />
+            <p class="text-justify">
+              {% blocktrans %}This apartment with a seperate living room and bedroom is on the ground floor, has its own entrance, fully equipped kitchen, bedroom with one double bed, one single bed and one sofabed, bathroom with WC (towels, hairdryer), shower/warm water, radio, 2 LCD TVs (82 + 67 cm), Wi-Fi.{% endblocktrans %}
+            </p>
+            <ul class="list-group mb-3">
+              <li class="list-group-item">
+                <div class="md-v-line"></div>
+                <i class="fas fa-border-style pr-2 d-inline"></i>
+                <div class="d-inline ml-5">35 m²</div>
+              </li>
+              <li class="list-group-item d-none d-sm-block">
+                <div class="md-v-line"></div>
+                <i class="fas fa-bed pr-1 mr-5"></i>
+                1 {{ double }}, 1 {{ single }}, 1 {{ sofa }}
+              </li>
+              <li class="list-group-item d-flex d-sm-none align-items-center">
+                <div class="md-v-line h-100"></div>
+                <i class="fas fa-bed pr-2"></i>
+                <div class="d-inline-block">
+                  <div class="ml-5">1 {{ double }}</div>
+                  <div class="ml-5">1 {{ single }}</div>
+                  <div class="ml-5">1 {{ sofa }}</div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="md-v-line" style="height: 100%"></div>
+                <i class="fas fa-users pr-1 d-inline"></i>
+                <div class="d-inline ml-5">{{ capacity }}: 4</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- APARTMENT 11 -->
+    <div class="card mb-5">
+      <div class="content">
+        <div class="row" id="apartment-name">
+          <div class="col-8">
+            <h1 class="d-none d-md-block">{{ apartment }} 11</h1>
+            <h3 class="d-block d-md-none">{{ apartment }} 11</h3>
+            <h5>{{ superior }}</h5>
+          </div>
+          <div class="col-4 img-fluid justify-content-center text-right" id="degree">
+            <a href="">
+              <img class="filter-gray" src="{% static 'generic/img/degree.png'%}" alt="360" />
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <!--Carousel Wrapper-->
+            <div id="carousel-thumb-11" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837862/apartments/apartment_11/a11_1_zyru8r.jpg"
+                    ,
+                    alt="First slide"
+                  />
+                </div>
+                {% for n in range_a11 %}
+                <div class="carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837862/apartments/apartment_11/a11_{{n}}_zyru8r.jpg"
+                    ,
+                    alt="First slide"
+                  />
+                </div>
+                {% endfor %}
+              </div>
+              <!--/.Slides-->
+              <!--Controls-->
+              <a class="carousel-control-prev" href="#carousel-thumb-11" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">{{ previous }}</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel-thumb-11" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">{{ next }}</span>
+              </a>
+              <!--/.Controls-->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-thumb-11" data-slide-to="0" class="active">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837862/apartments/apartment_11/a11_1_zyru8r.jpg"
+                    class="img-fluid"
+                  />
+                </li>
+                {% for n in range_a11 %}
+                <li data-target="#carousel-thumb-11" data-slide-to="{{n|add:'-1'}}">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837862/apartments/apartment_11/a11_{{n}}_zyru8r.jpg"
+                    class="img-fluid"
+                  />
+                </li>
+                {% endfor %}
+              </ol>
+            </div>
+            <!--/.Carousel Wrapper-->
+          </div>
+          <div class="col-12 col-lg-6 mt-4 mt-lg-0 icons">
+            <div class="d-flex justify-content-between">
+              <h5 class="d-none d-sm-block">{{ details }}</h5>
+              <h5 class="d-block d-sm-none">{{ details_sm }}</h5>
+              <div class="">
+                <i class="fas fa-wifi mr-2"></i>
+                <i class="fas fa-tv mr-2"></i>
+                <div class="radio">
+                  <img class="filter-gray" src="{% static 'generic/img/radio.svg'%}" alt="Fridge" />
+                </div>
+                <i class="fas fa-utensils mr-2"></i>
+                <div class="fridge">
+                  <img class="filter-gray" src="{% static 'generic/img/fridge.svg'%}" alt="Fridge" />
+                </div>
+                <div class="towels">
+                  <img class="filter-gray" src="{% static 'generic/img/towels.svg'%}" alt="Fridge" />
+                </div>
+                <div class="hairdryer">
+                  <img class="filter-gray" src="{% static 'generic/img/hairdryer.svg'%}" alt="Fridge" />
+                </div>
+              </div>
+            </div>
+            <hr />
+            <p class="text-justify">
+              {% blocktrans %}Superior is our biggest, newest (complete renovation in 2015) and the most comfortable apartment. It is situated on the second floor (no lift) has its own entrance, fully equiped kitchen (big fridge, toaster, coffee machine) that is connected to the living room (LCD TV 120 cm). There are two seperate bedrooms; one with a double bed, a single bed and a sofabed (LCD TV 70 cm) and the other one with one double and two single beds. It has a large bathroom with WC and washing machine (towels, hairdryer, shower/ warm water) and one additional bathroom with only toilet. Wi-Fi is available in the apartment.{% endblocktrans %}
+            </p>
+            <ul class="list-group mb-3">
+              <li class="list-group-item">
+                <div class="md-v-line"></div>
+                <i class="fas fa-border-style pr-2 d-inline"></i>
+                <div class="d-inline ml-5">82 m²</div>
+              </li>
+              <li class="list-group-item d-none d-sm-block">
+                <div class="md-v-line"></div>
+                <i class="fas fa-bed pr-1 mr-5"></i>
+                2 {{ doubles }}, 3 {{ singles }}, 2 {{ sofas }}
+              </li>
+              <li class="list-group-item d-flex d-sm-none align-items-center">
+                <div class="md-v-line h-100"></div>
+                <i class="fas fa-bed pr-2"></i>
+                <div class="d-inline-block">
+                  <div class="ml-5">2 {{ doubles }}</div>
+                  <div class="ml-5">3 {{ singles }}</div>
+                  <div class="ml-5">2 {{ sofas }}</div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="md-v-line" style="height: 100%"></div>
+                <i class="fas fa-users pr-1 d-inline"></i>
+                <div class="d-inline ml-5">{{ capacity }}: 9</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- APARTMENT 12 -->
+    <div class="card mb-5">
+      <div class="content">
+        <div class="row" id="apartment-name">
+          <div class="col-8">
+            <h1 class="d-none d-md-block">{{ apartment }} 12</h1>
+            <h3 class="d-block d-md-none">{{ apartment }} 12</h3>
+            <h5>{{ standard }}</h5>
+          </div>
+          <div class="col-4 img-fluid justify-content-center text-right" id="degree">
+            <a href="">
+              <img class="filter-gray" src="{% static 'generic/img/degree.png'%}" alt="360" />
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <!--Carousel Wrapper-->
+            <div id="carousel-thumb-12" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837889/apartments/apartment_12/a12_1_kknpnz.jpg"
+                    ,
+                    alt="First slide"
+                  />
+                </div>
+                {% for n in range_a12 %}
+                <div class="carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837889/apartments/apartment_12/a12_{{n}}_kknpnz.jpg"
+                    ,
+                    alt="First slide"
+                  />
+                </div>
+                {% endfor %}
+              </div>
+              <!--/.Slides-->
+              <!--Controls-->
+              <a class="carousel-control-prev" href="#carousel-thumb-12" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">{{ previous }}</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel-thumb-12" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">{{ next }}</span>
+              </a>
+              <!--/.Controls-->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-thumb-12" data-slide-to="0" class="active">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837889/apartments/apartment_12/a12_1_kknpnz.jpg"
+                    class="img-fluid"
+                  />
+                </li>
+                {% for n in range_a12 %}
+                <li data-target="#carousel-thumb-12" data-slide-to="{{n|add:'-1'}}">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837889/apartments/apartment_12/a12_{{n}}_kknpnz.jpg"
+                    class="img-fluid"
+                  />
+                </li>
+                {% endfor %}
+              </ol>
+            </div>
+            <!--/.Carousel Wrapper-->
+          </div>
+          <div class="col-12 col-lg-6 mt-4 mt-lg-0 icons">
+            <div class="d-flex justify-content-between">
+              <h5 class="d-none d-sm-block">{{ details }}</h5>
+              <h5 class="d-block d-sm-none">{{ details_sm}}</h5>
+              <div class="">
+                <i class="fas fa-wifi mr-2"></i>
+                <i class="fas fa-tv mr-2"></i>
+                <div class="radio">
+                  <img class="filter-gray" src="{% static 'generic/img/radio.svg'%}" alt="Fridge" />
+                </div>
+                <i class="fas fa-utensils mr-2"></i>
+                <div class="fridge">
+                  <img class="filter-gray" src="{% static 'generic/img/fridge.svg'%}" alt="Fridge" />
+                </div>
+                <div class="towels">
+                  <img class="filter-gray" src="{% static 'generic/img/towels.svg'%}" alt="Fridge" />
+                </div>
+                <div class="hairdryer">
+                  <img class="filter-gray" src="{% static 'generic/img/hairdryer.svg'%}" alt="Fridge" />
+                </div>
+              </div>
+            </div>
+            <hr />
+            <p class="text-justify">
+              {% blocktrans %}Comfortable, new apartment on the ground floor, that has its own entrance, fully equiped kitchen, living room with a sofabed and bedroom with one double bed and one single bed. There is a bathroom with WC (towels, hairdryer), shower/warm water, radio, 2 LCD TVs (101 + 67 cm), Wi-Fi.{% endblocktrans %}
+            </p>
+            <ul class="list-group mb-3">
+              <li class="list-group-item">
+                <div class="md-v-line"></div>
+                <i class="fas fa-border-style pr-2 d-inline"></i>
+                <div class="d-inline ml-5">50 m²</div>
+              </li>
+              <li class="list-group-item d-none d-sm-block">
+                <div class="md-v-line"></div>
+                <i class="fas fa-bed pr-1 mr-5"></i>
+                1 {{ double }}, 1 {{ single }}, 1 {{ sofa }}
+              </li>
+              <li class="list-group-item d-flex d-sm-none align-items-center">
+                <div class="md-v-line h-100"></div>
+                <i class="fas fa-bed pr-2"></i>
+                <div class="d-inline-block">
+                  <div class="ml-5">1 {{ double }}</div>
+                  <div class="ml-5">1 {{ single }}</div>
+                  <div class="ml-5">1 {{ sofa }}</div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="md-v-line" style="height: 100%"></div>
+                <i class="fas fa-users pr-1 d-inline"></i>
+                <div class="d-inline ml-5">{{ capacity }}: 4</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- APARTMENT 13 -->
+    <div class="card mb-5">
+      <div class="content">
+        <div class="row" id="apartment-name">
+          <div class="col-8">
+            <h1 class="d-none d-md-block">{{ apartment }} 13</h1>
+            <h3 class="d-block d-md-none">{{ apartment }} 13</h3>
+            <h5>{{ standard }}</h5>
+          </div>
+          <div class="col-4 img-fluid justify-content-center text-right" id="degree">
+            <a href="">
+              <img class="filter-gray" src="{% static 'generic/img/degree.png'%}" alt="360" />
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <!--Carousel Wrapper-->
+            <div id="carousel-thumb-13" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837909/apartments/apartment_13/a13_1_njf7ip.jpg"
+                    ,
+                    alt="First slide"
+                  />
+                </div>
+                {% for n in range_a13 %}
+                <div class="carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837909/apartments/apartment_13/a13_{{n}}_njf7ip.jpg"
+                    ,
+                    alt="First slide"
+                  />
+                </div>
+                {% endfor %}
+              </div>
+              <!--/.Slides-->
+              <!--Controls-->
+              <a class="carousel-control-prev" href="#carousel-thumb-13" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">{{ previous }}</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel-thumb-13" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">{{ next }}</span>
+              </a>
+              <!--/.Controls-->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-thumb-13" data-slide-to="0" class="active">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837909/apartments/apartment_13/a13_1_njf7ip.jpg"
+                    class="img-fluid"
+                  />
+                </li>
+                {% for n in range_a13 %}
+                <li data-target="#carousel-thumb-13" data-slide-to="{{n|add:'-1'}}">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837909/apartments/apartment_13/a13_{{n}}_njf7ip.jpg"
+                    class="img-fluid"
+                  />
+                </li>
+                {% endfor %}
+              </ol>
+            </div>
+            <!--/.Carousel Wrapper-->
+          </div>
+          <div class="col-12 col-lg-6 mt-4 mt-lg-0 icons">
+            <div class="d-flex justify-content-between">
+              <h5 class="d-none d-sm-block">{{ details }}</h5>
+              <h5 class="d-block d-sm-none">{{ details_sm }}</h5>
+              <div class="">
+                <i class="fas fa-wifi mr-2"></i>
+                <i class="fas fa-tv mr-2"></i>
+                <div class="radio">
+                  <img class="filter-gray" src="{% static 'generic/img/radio.svg'%}" alt="Fridge" />
+                </div>
+                <i class="fas fa-utensils mr-2"></i>
+                <div class="fridge">
+                  <img class="filter-gray" src="{% static 'generic/img/fridge.svg'%}" alt="Fridge" />
+                </div>
+                <div class="towels">
+                  <img class="filter-gray" src="{% static 'generic/img/towels.svg'%}" alt="Fridge" />
+                </div>
+                <div class="hairdryer">
+                  <img class="filter-gray" src="{% static 'generic/img/hairdryer.svg'%}" alt="Fridge" />
+                </div>
+              </div>
+            </div>
+            <hr />
+            <p class="text-justify">
+              {% blocktrans %}Comfortable, new apartment on the first floor (no lift), that has its own entrance, fully equiped kitchen, living room with a sofabed and bedroom with one double and one single bed. There is a bathroom with WC (towels, hairdryer), shower/warm water, radio, 2 LCD TVs (101 + 67 cm), Wi-Fi.{% endblocktrans %}
+            </p>
+            <ul class="list-group mb-3">
+              <li class="list-group-item">
+                <div class="md-v-line"></div>
+                <i class="fas fa-border-style pr-2 d-inline"></i>
+                <div class="d-inline ml-5">55 m²</div>
+              </li>
+              <li class="list-group-item d-none d-sm-block">
+                <div class="md-v-line"></div>
+                <i class="fas fa-bed pr-1 mr-5"></i>
+                1 {{ double }}, 1 {{ single }}, 1 {{ sofa }}
+              </li>
+              <li class="list-group-item d-flex d-sm-none align-items-center">
+                <div class="md-v-line h-100"></div>
+                <i class="fas fa-bed pr-2"></i>
+                <div class="d-inline-block">
+                  <div class="ml-5">1 {{ double }}</div>
+                  <div class="ml-5">1 {{ single }}</div>
+                  <div class="ml-5">1 {{ sofa }}</div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="md-v-line" style="height: 100%"></div>
+                <i class="fas fa-users pr-1 d-inline"></i>
+                <div class="d-inline ml-5">{{ capacity }}: 4</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- APARTMENT 14 -->
+    <div class="card mb-5">
+      <div class="content">
+        <div class="row" id="apartment-name">
+          <div class="col-8">
+            <h1 class="d-none d-md-block">{{ apartment }} 14</h1>
+            <h3 class="d-block d-md-none">{{ apartment }} 14</h3>
+            <h5>{{ comfort }}</h5>
+          </div>
+          <div class="col-4 img-fluid justify-content-center text-right" id="degree">
+            <a href="">
+              <img class="filter-gray" src="{% static 'generic/img/degree.png'%}" alt="360" />
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <!--Carousel Wrapper-->
+            <div id="carousel-thumb-14" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837948/apartments/apartment_14/a14_1_fheubd.jpg"
+                    ,
+                    alt="First slide"
+                  />
+                </div>
+                {% for n in range_a14 %}
+                <div class="carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837948/apartments/apartment_14/a14_{{n}}_fheubd.jpg"
+                    ,
+                    alt="First slide"
+                  />
+                </div>
+                {% endfor %}
+              </div>
+              <!--/.Slides-->
+              <!--Controls-->
+              <a class="carousel-control-prev" href="#carousel-thumb-14" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">{{ previous }}</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel-thumb-14" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">{{ next }}</span>
+              </a>
+              <!--/.Controls-->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-thumb-14" data-slide-to="0" class="active">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837948/apartments/apartment_14/a14_1_fheubd.jpg"
+                    class="img-fluid"
+                  />
+                </li>
+                {% for n in range_a14 %}
+                <li data-target="#carousel-thumb-14" data-slide-to="{{n|add:'-1'}}">
+                  <img
+                    class="d-block w-100"
+                    src="https://res.cloudinary.com/hmzflxvlh/image/upload/v1655837948/apartments/apartment_14/a14_{{n}}_fheubd.jpg"
+                    class="img-fluid"
+                  />
+                </li>
+                {% endfor %}
+              </ol>
+            </div>
+            <!--/.Carousel Wrapper-->
+          </div>
+          <div class="col-12 col-lg-6 mt-4 mt-lg-0 icons">
+            <div class="d-flex justify-content-between">
+              <h5 class="d-none d-sm-block">{{ details }}</h5>
+              <h5 class="d-block d-sm-none">{{ details_sm }}</h5>
+              <div class="">
+                <i class="fas fa-wifi mr-2"></i>
+                <i class="fas fa-tv mr-2"></i>
+                <div class="radio">
+                  <img class="filter-gray" src="{% static 'generic/img/radio.svg'%}" alt="Fridge" />
+                </div>
+                <i class="fas fa-utensils mr-2"></i>
+                <div class="fridge">
+                  <img class="filter-gray" src="{% static 'generic/img/fridge.svg'%}" alt="Fridge" />
+                </div>
+                <div class="towels">
+                  <img class="filter-gray" src="{% static 'generic/img/towels.svg'%}" alt="Fridge" />
+                </div>
+                <div class="hairdryer">
+                  <img class="filter-gray" src="{% static 'generic/img/hairdryer.svg'%}" alt="Fridge" />
+                </div>
+              </div>
+            </div>
+            <hr />
+            <p class="text-justify">
+              {% blocktrans %}This large and comfortable mezonet apartment is situated on the second and third floor (no lift). It has its own entrance, large bathroom with WC and a washing machine (towels, hairddryer), and another bathroom with toilet only. Fully equipped kitchen is connected with the living room (LCD TV 107 cm) that contains a sofabed. In the attic of this two floor apartment there are two bedrooms; one with a double and a single bed (LCD TV 82 cm), and other one with two single beds. There is also free Wi-Fi and radio available.{% endblocktrans %}
+            </p>
+            <ul class="list-group mb-3">
+              <li class="list-group-item">
+                <div class="md-v-line"></div>
+                <i class="fas fa-border-style pr-2 d-inline"></i>
+                <div class="d-inline ml-5">80 m²</div>
+              </li>
+              <li class="list-group-item d-none d-sm-block">
+                <div class="md-v-line"></div>
+                <i class="fas fa-bed pr-1 mr-5"></i>
+                1 {{ double }}, 3 {{ singles }}, 1 {{ sofa }}
+              </li>
+              <li class="list-group-item d-flex d-sm-none align-items-center">
+                <div class="md-v-line h-100"></div>
+                <i class="fas fa-bed pr-2"></i>
+                <div class="d-inline-block">
+                  <div class="ml-5">1 {{ double }}</div>
+                  <div class="ml-5">3 {{ singles }}</div>
+                  <div class="ml-5">1 {{ sofa }}</div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="md-v-line" style="height: 100%"></div>
+                <i class="fas fa-users pr-1 d-inline"></i>
+                <div class="d-inline ml-5">{{ capacity }}: 6</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- END CARDS -->
+  </div>
+</div>
+<!-- END CARD WRAPPER -->
+
+{% endblock %}

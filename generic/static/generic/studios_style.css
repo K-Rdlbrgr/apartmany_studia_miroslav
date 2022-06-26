@@ -1,0 +1,166 @@
+/* Main Sections */
+.wallpaper {
+  background-image: url(../apartmany/img/wallpaper.jpg);
+  min-height: 700px;
+  opacity: 0.8;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container-fix {
+  position: fixed;
+  top: 17vh;
+}
+
+.apartment-fix {
+  border-top: 5px;
+  border-left: 5px;
+  border-bottom: 5px;
+  border-right: 0;
+  border-color: #fff;
+  border-style: solid;
+  min-height: 200px;
+  top: 5%;
+  position: fixed;
+}
+
+.apartment-fix h1 {
+  font-size: 40px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #fff;
+}
+
+/* CARDS */
+
+@import url("https://afeld.github.io/emoji-css/emoji.css");
+
+.inner-container {
+  position: relative;
+  max-width: 100%;
+  min-width: 360px;
+  width: 100%;
+  margin: 0 auto 0;
+}
+
+.content {
+  /* position: absolute; */
+  opacity: 1;
+  top: 2em;
+  left: 1%;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  background: var(--primary-color-light);
+  border-radius: 5px;
+  border: none 1px var(--primary-color-dark);
+  border-bottom: solid 5px var(--primary-color-dark);
+  padding: 2em 0;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+  box-shadow: 0 3px 15px -3px rgba(0, 0, 0, 0.35);
+}
+
+#apartment-name h5 {
+  color: var(--primary-text-color);
+}
+
+#degree img {
+  max-width: 60px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.content h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--primary-color-dark);
+  margin: 0;
+}
+
+.content h3 {
+  font-weight: 700;
+  color: var(--primary-color-dark);
+  margin: 0;
+}
+
+.content p {
+  margin-top: 0;
+  font-size: 16px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.icons h5 {
+  margin-bottom: 0;
+}
+
+.md-v-line {
+  position: absolute;
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+  height: 50px;
+  top: 0px;
+  left: 54px;
+}
+.list-group {
+  background: var(--primary-color-light);
+}
+
+.fridge,
+.radio,
+.towels,
+.hairdryer {
+  display: inline;
+}
+.fridge img {
+  width: 20px;
+  margin: 0 8px 2px -5px;
+  top: 0;
+}
+.radio img {
+  width: 20px;
+  margin: 0 8px 5px 0;
+  top: 0;
+}
+.towels img {
+  width: 20px;
+  margin: 0 8px 2px -5px;
+  top: 0;
+}
+.hairdryer img {
+  width: 15px;
+  margin: 0 8px 2px 0;
+  top: 0;
+}
+
+.filter-gray {
+  filter: invert(0%) sepia(3%) saturate(851%) hue-rotate(340deg) brightness(89%)
+    contrast(83%);
+}
+
+.carousel-item img {
+  max-height: 500px;
+}
+
+/* HEADER PICTURE */
+.pimg {
+  background-image: url(../apartmany/img/studios.jpg);
+  background-size: cover;
+  background-position-y: 30%;
+  height: 400px;
+}
+
+.pimg-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 400px;
+}
+
+.pimg h1 {
+  color: var(--primary-color-light);
+}
