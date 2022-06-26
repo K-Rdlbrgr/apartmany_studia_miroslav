@@ -4,7 +4,7 @@
 .no-overlay-picture {
   width: 40%;
   height: 40%;
-  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655049754/contact/miro_uxbiiz.jpg');
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/w_200,c_scale/v1655049754/contact/miro_uxbiiz.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 50%;
@@ -13,7 +13,7 @@
 }
 
 .card-image {
-  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655049358/contact/contact_form_yluov6.jpg');
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/w_700,c_scale/v1655049358/contact/contact_form_yluov6.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -44,7 +44,7 @@
 
 /* HEADER PICTURE */
 .pimg {
-  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/v1655049357/contact/contact-header_rdhhiu.jpg');
+  background-image: url('https://res.cloudinary.com/hmzflxvlh/image/upload/w_2600,c_scale/v1655049357/contact/contact-header_rdhhiu.jpg');
   background-size: cover;
   background-position-y: 80%;
   height: 400px;
