@@ -8,6 +8,7 @@ django-widget-tweaks==1.4.12
 gunicorn==20.1.0
 numpy==1.22.4
 psycopg2==2.9.3
+python==3.9.11
 python-dotenv==0.20.0
 pytz==2022.1
 sqlparse==0.4.2
