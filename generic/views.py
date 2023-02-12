@@ -49,6 +49,9 @@ def guestbook(request):
 
     average_rating = round(np.average(temp_ratings), 1)
 
+    if not temp_ratings:
+        temp_ratings = [1]
+
     ratings = {
         "average": average_rating,
         "amount": len(temp_ratings),
@@ -70,15 +73,10 @@ def guestbook(request):
                     }
     }
 
-    print(ratings)
-
     new_comment = None
     # Comment posted
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
-        print(comment_form)
-        print(comment_form['name'])
-        print(comment_form['content'])
         if comment_form.is_valid():
             # Create Comment object and save it to database
             new_comment = comment_form.save()

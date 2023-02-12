@@ -35,6 +35,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'widget_tweaks',
+    'crispy_forms',
+    'mathfilters',
     'generic.apps.GenericConfig',
     'django.contrib.admin',
     'django.contrib.auth',
